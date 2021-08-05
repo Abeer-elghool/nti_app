@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -13,7 +14,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        //
+        return view('login');
     }
 
     /**
@@ -32,9 +33,12 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LoginRequest $request)
     {
-
+        if(!Auth::attempt($request->validated())){
+            return redirect()->intended('welcome');
+        }
+        return redirect()->intended('student');
     }
 
     /**

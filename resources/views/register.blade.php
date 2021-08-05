@@ -43,7 +43,8 @@
         <div class="col-md-6">
             <h1>Register to Socialite</h1>
             <p>so you can keep up with all trends and contact with friends</p>
-            <form class="row g-3" action="register.php" method="post" enctype="multipart/form-data">
+            <form class="row g-3" action="{{route('store.register')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="col-md-6">
                     <label for="inputName" class="form-label">Name</label>
                     <input type="text" name="name" class="form-control" id="inputName">

@@ -43,7 +43,8 @@
         <div class="col-md-6">
             <h1>Login to Socialite</h1>
             <p>so you can keep up with all trends and contact with friends</p>
-            <form class="row g-3" action="login.php" method="post">
+            <form class="row g-3" action="{{route('store.login')}}" method="post">
+                @csrf
                 <div class="col-md-12">
                     <label for="inputEmail4" class="form-label">Email</label>
                     <input type="email" name="email" class="form-control" id="inputEmail4">
